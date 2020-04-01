@@ -21,10 +21,9 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-server.listen(port,'127.0.0.1');
-
 let server = http.createServer(app);
 
+server.listen(port,'127.0.0.1');
 /**
  * Listen on provided port, on all network interfaces.
  */

@@ -15,9 +15,9 @@ log4js.configure({
     categories: { default: { appenders: ["cheese"], level: "error" } }
 });
 
-const log = log4js.getLogger("app");
+const log = log4js.getLogger("server");
 
-let indexRouter = require("./routes/main");
+let routes = require("./routers");
 
 const app = express();
 
@@ -51,7 +51,7 @@ app.use(cors());
 //   origin: 'https://api.zoocomplex.com.ua/'
 // }));
 
-app.use("/", indexRouter);
+app.use("/api", routes);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

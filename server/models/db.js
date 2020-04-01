@@ -22,9 +22,7 @@ const sequelize = new Sequelize(db, user_db, user_password, {
     }
 });
 
-const {
-    CustomerModel
-} = require("./customer");
+const customer = require("./customer");
 
 sequelize.sync({ force: false })
     .then(() => {
@@ -34,7 +32,8 @@ sequelize.sync({ force: false })
     log.error("Error name: " + reason.name + " Address: " + reason.parent.address + " Port: " + reason.parent.port + " Syscall: " + reason.parent.syscall);
 });
 
-const   Customer       = CustomerModel(sequelize, Sequelize);
+const   Customer       = customer(sequelize, Sequelize);
+
 
 module.exports = {
     Customer,

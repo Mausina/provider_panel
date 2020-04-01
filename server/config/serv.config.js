@@ -2,7 +2,7 @@ require('dotenv').config();
 
 exports.config = {
     "db":process.env.DB_NAME,
-    "user_db": process.env.DB_HOST,
+    "user_db": process.env.DB_USER,
     "user_password": process.env.DB_PASS,
     "host": process.env.DB_HOST,
     "dialect": process.env.DB_DIALECT,
