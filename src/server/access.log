@@ -1,0 +1,2 @@
+::ffff:127.0.0.1 - - [02/Apr/2020:08:32:09 +0000] "GET /api/customers HTTP/1.1" 201 249
+::ffff:127.0.0.1 - - [02/Apr/2020:08:34:00 +0000] "GET /api/customers HTTP/1.1" 201 249
