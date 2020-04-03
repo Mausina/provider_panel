@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     telephone: DataTypes.STRING,
     password: DataTypes.STRING,
     salt: DataTypes.STRING,
+    role: DataTypes.ENUM('manager','admin','provider'),
     prefix: DataTypes.STRING,
     status: DataTypes.BOOLEAN
   }, {});

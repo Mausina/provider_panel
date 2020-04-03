@@ -1,74 +1,71 @@
+const customerService = require('../service/customer.service');
 const {Customer} = require("../models/db");
+let jwt = require("jsonwebtoken");
 
 // Create and Save a new Customer
 exports.create = async (req, res) => {
-    try {
-        const user = await Customer.create(req.body);
-        return res.status(201).json({
+    customerService.create(req.body)
+        .then(user => user ? res.json({
             'msg': 'Success',
             user
-        });
-    } catch (error) {
-        return res.status(500).json({error: error.message})
-    }
+        }) : res.status(400).json({message: 'Username cant add'}))
+        .catch(err => res.status(400).json({message: err.errors[0].message}));
 };
 
 // Retrieve all Customers from the database.
 exports.findAll = async (req, res) => {
-    try {
-        const users = await Customer.findAll();
-        return res.status(201).json({
-            users,
-        });
-    } catch (error) {
-        return res.status(500).json({error: error.message})
-    }
+    customerService.findAll().then(users => users ? res.json({
+        'msg': 'Success',
+        users
+    }) : res.status(400).json({message: 'Users cant get answer admin'}))
+        .catch(err => res.status(400).json({message: err}));
 };
 
 // Find a single Customer with a customerId
 exports.findOne = async (req, res) => {
-    try {
-        const users = await Customer.findOne({where: {id: req.params.id}});
-        if (!users) return res.status(404).json({'msg': 'Dont find user'});
-        return res.status(201).json({
-            'msg': 'Success',
-            users,
-        });
-    } catch (error) {
-        return res.status(500).json({error: error.message})
-    }
+    customerService.findOne(req.params).then(user => user ? res.json({
+        'msg': 'Success',
+        user
+    }) : res.status(400).json({message: 'Username cant Find'}))
+        .catch(err => res.status(400).json({message: err}));
 };
 
 // Update a Customer identified by the customerId in the request
 exports.update = async (req, res) => {
-    try {
-        const {user_id} = req.params;
-        const [updated] = await Customer.update(req.body, {
-            where: {id: user_id}
-        });
-        if (updated) {
-            const updatedUser = await Customer.findOne({where: {id: user_id}});
-            return res.status(200).json({user: updatedUser});
-        }
-        throw new Error('User not found');
-    } catch (error) {
-        return res.status(500).send(error.message);
-    }
+    customerService.update(req) .then(user => user ? res.json({
+        'msg': 'Success',
+        user
+    }) : res.status(400).json({message: 'Username cant Update'}))
+        .catch(err => res.status(400).json({message: err}));
 };
 
 // Delete a Customer with the specified customerId in the request
 exports.delete = async (req, res) => {
-    try {
-        const { user_id } = req.params;
-        const deleted = await Customer.destroy({
-            where: { id: user_id }
-        });
-        if (deleted) {
-            return res.status(201).json({'msg':'User deleted', user: user_id});
-        }
-
-        throw new Error("User deleted not found");
-    } catch (error) {
-        return res.status(500).send(error.message);
-    }
+    customerService.delete(req.params).then(user => user ? res.json({
+        'msg': 'Success',
+        user
+    }) : res.status(400).json({message: 'Username cant Delete'}))
+        .catch(err => res.status(400).json({message: err}));
 };
+
+exports.authenticate = async (req, res) => {
+    customerService.authenticate(req.body).then(token => token ? res.json({
+        'msg': 'Success',
+        token
+    }) : res.status(400).json({message: 'User cant find check fields'}))
+        .catch(err => res.status(400).json({message: err}));
+};
+
+exports.token = (req, res) => {
+    let result = customerService.token(req.body);
+    console.log(result)
+    let {accessToken,code} = result;
+
+    if (accessToken && code !== 403) {
+        res.status(code).json({ 'msg': 'Success',accessToken})
+    }else {
+        res.status(code).json({message: 'Refresh token incorrect'});
+    }
+
+};
+

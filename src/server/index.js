@@ -6,16 +6,8 @@ let path = require("path");
 let cookieParser = require("cookie-parser");
 let logger = require("morgan");
 let fs = require("fs");
-
+const errorHandler = require("./_helpers/error-handler");
 const cors = require("cors");
-
-const log4js = require("log4js");
-log4js.configure({
-    appenders: { cheese: { type: "file", filename: "error.log" } },
-    categories: { default: { appenders: ["cheese"], level: "error" } }
-});
-
-const log = log4js.getLogger("server");
 
 let routes = require("./routers");
 
@@ -59,16 +51,6 @@ app.use(function (req, res, next) {
 });
 
 // error handler
-app.use(function (err, req, res, next) {
-
-    // set locals, only providing error in development
-    res.locals.message = err.message;
-    res.locals.error = req.app.get("env") === "development" ? err : {};
-
-    log.error(err.message);
-    // render the error page
-    res.status(err.status || 500);
-    res.render("error");
-});
+app.use(errorHandler);
 
 module.exports = app;

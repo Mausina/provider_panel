@@ -1,1 +1,15 @@
-[2020-04-02T10:39:10.177] [ERROR] db - Error name: SequelizeConnectionRefusedError Address: 127.0.0.1 Port: 3306 Syscall: connect
+
+[2020-04-03T12:35:12.992] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-04-03T12:35:24.697] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-04-03T12:49:43.623] [ERROR] server - payload is required
+[2020-04-03T12:51:08.486] [ERROR] server - payload is required
+[2020-04-03T12:52:52.250] [ERROR] server - payload is required
+[2020-04-03T12:53:40.810] [ERROR] server - payload is required
+[2020-04-03T12:54:38.451] [ERROR] server - payload is required
+[2020-04-03T12:54:47.891] [ERROR] server - payload is required
+[2020-04-03T12:55:12.420] [ERROR] server - Bad "options.expiresIn" option the payload already has an "exp" property.
+[2020-04-03T12:56:53.490] [ERROR] server - Bad "options.expiresIn" option the payload already has an "exp" property.
+[2020-04-03T12:59:59.795] [ERROR] server - "expiresIn" should be a number of seconds or string representing a timespan
+[2020-04-03T13:00:58.953] [ERROR] server - Bad "options.expiresIn" option the payload already has an "exp" property.
+[2020-04-03T13:01:11.748] [ERROR] server - Bad "options.expiresIn" option the payload already has an "exp" property.
+[2020-04-03T13:02:02.643] [ERROR] server - customerService.token(...).then is not a function

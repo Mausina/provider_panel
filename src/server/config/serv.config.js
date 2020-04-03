@@ -8,5 +8,7 @@ exports.config = {
     "dialect": process.env.DB_DIALECT,
     "service_mail": process.env.SERVICE_MAIL,
     "admin_mail":process.env.ADMIN_MAIL,
-    "user_email_password": process.env.USER_EMAIL_PASS
+    "user_email_password": process.env.USER_EMAIL_PASS,
+    "secret": process.env.SECRET,
+    "refresh_secret": process.env.REFRESH_SECRET
 };

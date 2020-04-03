@@ -1,12 +1,12 @@
 const Sequelize = require("sequelize");
-let {config: {db,user_db,user_password,host,dialect}} = require("../config/serv.config");
+let {config: {db, user_db, user_password, host, dialect}} = require("../config/serv.config");
 
 
 const log4js = require("log4js");
 
 log4js.configure({
-    appenders: { cheese: { type: "file", filename: "error.log" } },
-    categories: { default: { appenders: ["cheese"], level: "error" } }
+    appenders: {cheese: {type: "file", filename: "error.log"}},
+    categories: {default: {appenders: ["cheese"], level: "error"}}
 });
 
 const log = log4js.getLogger("db");
@@ -22,7 +22,7 @@ const sequelize = new Sequelize(db, user_db, user_password, {
     }
 });
 
-sequelize.sync({ force: false })
+sequelize.sync({force: false, logging: console.log})
     .then(() => {
         console.log("Database & tables created!");
     }).catch(function (reason) {

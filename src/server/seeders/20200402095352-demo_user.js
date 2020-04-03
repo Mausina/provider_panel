@@ -11,10 +11,12 @@ module.exports = {
       salt:'123',
       prefix:"JH",
       status:'1',
+      role:'admin',
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
   },
+
   down: (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('customers', null, {});
   }
