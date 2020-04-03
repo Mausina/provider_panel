@@ -13,9 +13,6 @@ module.exports = {
     generateAccessToken(user,token,expire,) {
         return jwt.sign(user, token, {expiresIn: expire});
     },
-    generateRefreshToken(user,token,expire) {
-        return jwt.sign(user, token, {expiresIn: expire});
-    },
     async sendMail(res,service,user,pass,to,subject,html){
 
         let transporter = nodemailer.createTransport({
