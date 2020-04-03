@@ -56,7 +56,7 @@ exports.authenticate = async ({email, password}) => {
             role: user.dataValues.role
         }, config.secret, "60s");
 
-        const refreshToken = fun.generateRefreshToken({
+        const refreshToken = fun.generateAccessToken({
             sub: user.dataValues.id,
             role: user.dataValues.role
         }, config.refresh_secret, "7d");

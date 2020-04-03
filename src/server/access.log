@@ -38,3 +38,5 @@
 ::ffff:127.0.0.1 - - [03/Apr/2020:10:11:33 +0000] "POST /api/customer/token HTTP/1.1" 200 162
 ::ffff:127.0.0.1 - - [03/Apr/2020:10:11:39 +0000] "POST /api/customer/token HTTP/1.1" 200 162
 ::ffff:127.0.0.1 - - [03/Apr/2020:10:12:02 +0000] "POST /api/customer/token HTTP/1.1" 200 162
+::ffff:127.0.0.1 - - [03/Apr/2020:10:13:33 +0000] "POST /api/customer/token HTTP/1.1" 403 37
+::ffff:127.0.0.1 - - [03/Apr/2020:10:13:46 +0000] "POST /api/customer/token HTTP/1.1" 200 250
