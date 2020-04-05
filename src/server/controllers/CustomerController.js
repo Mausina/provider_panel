@@ -1,10 +1,11 @@
-const customerService = require('../service/customer.service');
-const {Customer} = require("../models/db");
+const {create_service, findOne_service, findAll_service, update_service, delete_service, authenticate_service} = require('../service/customer.service');
+const fun = require('../lib/function');
 let jwt = require("jsonwebtoken");
+const {config} = require('../config/serv.config');
 
 // Create and Save a new Customer
-exports.create = async (req, res) => {
-    customerService.create(req.body)
+let create = async (req, res) => {
+    create_service(req.body)
         .then(user => user ? res.json({
             'msg': 'Success',
             user
@@ -13,8 +14,8 @@ exports.create = async (req, res) => {
 };
 
 // Retrieve all Customers from the database.
-exports.findAll = async (req, res) => {
-    customerService.findAll().then(users => users ? res.json({
+let findAll = async (req, res) => {
+    findAll_service().then(users => users ? res.json({
         'msg': 'Success',
         users
     }) : res.status(400).json({message: 'Users cant get answer admin'}))
@@ -22,8 +23,8 @@ exports.findAll = async (req, res) => {
 };
 
 // Find a single Customer with a customerId
-exports.findOne = async (req, res) => {
-    customerService.findOne(req.params).then(user => user ? res.json({
+let findOne = async (req, res) => {
+    findOne_service(req.params).then(user => user ? res.json({
         'msg': 'Success',
         user
     }) : res.status(400).json({message: 'Username cant Find'}))
@@ -31,8 +32,10 @@ exports.findOne = async (req, res) => {
 };
 
 // Update a Customer identified by the customerId in the request
-exports.update = async (req, res) => {
-    customerService.update(req) .then(user => user ? res.json({
+let update = async (req, res) => {
+    const {user_id} = req.params;
+
+    update_service(user_id,req.body) .then(user => user ? res.json({
         'msg': 'Success',
         user
     }) : res.status(400).json({message: 'Username cant Update'}))
@@ -40,32 +43,35 @@ exports.update = async (req, res) => {
 };
 
 // Delete a Customer with the specified customerId in the request
-exports.delete = async (req, res) => {
-    customerService.delete(req.params).then(user => user ? res.json({
+let delete_user = async (req, res) => {
+    delete_service(req.params).then(user => user ? res.json({
         'msg': 'Success',
         user
     }) : res.status(400).json({message: 'Username cant Delete'}))
         .catch(err => res.status(400).json({message: err}));
 };
 
-exports.authenticate = async (req, res) => {
-    customerService.authenticate(req.body).then(token => token ? res.json({
-        'msg': 'Success',
-        token
-    }) : res.status(400).json({message: 'User cant find check fields'}))
+let authenticate = async (req, res) => {
+    authenticate_service(req.body)
+        .then(user => user ? res.status(200).json(fun.token_controller(user)) : res.status(400).json({message: 'User cant find check fields'}))
         .catch(err => res.status(400).json({message: err}));
 };
 
-exports.token = (req, res) => {
-    let result = customerService.token(req.body);
-    console.log(result)
-    let {accessToken,code} = result;
-
-    if (accessToken && code !== 403) {
-        res.status(code).json({ 'msg': 'Success',accessToken})
-    }else {
-        res.status(code).json({message: 'Refresh token incorrect'});
-    }
-
+let token = (req, res) => {
+    jwt.verify(req.body.token, config.refresh_secret, (err, user) => {
+        if (err) res.status(403).json({message: 'Refresh token incorrect'});
+        let accessToken = fun.generateAccessToken({user},config.secret,'60s');
+        res.status(200).json({ 'msg': 'Success',accessToken})
+    },);
 };
 
+
+module.exports = {
+    token,
+    authenticate,
+    delete_user,
+    update,
+    findOne,
+    findAll,
+    create
+};

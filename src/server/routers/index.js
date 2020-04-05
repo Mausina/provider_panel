@@ -12,7 +12,7 @@ router.post('/customer/token', customer.token);
 router.get('/customers', validator.role_validate, customer.findAll);
 router.post('/customer/:id', validator.auth_check, customer.findOne);
 router.put('/customer/:user_id', validator.update_validate, customer.update);
-router.delete('/customer/:user_id', validator.role_validate, customer.delete);
+router.delete('/customer/:user_id', validator.role_validate, customer.delete_user);
 
 
 module.exports = router;
