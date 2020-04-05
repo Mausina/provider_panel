@@ -1,6 +1,7 @@
 let jwt = require("jsonwebtoken");
 const log4js = require("log4js");
 const nodemailer = require("nodemailer");
+const {config} = require('../config/serv.config');
 
 log4js.configure({
     appenders: { cheese: { type: "file", filename: "error.log"}},
@@ -51,5 +52,28 @@ module.exports = {
         }
         return true;
     },
+    token_controller(user) {
 
-};
+        let now = new Date();
+        const accessToken = this.generateAccessToken({
+            sub: user.dataValues.id,
+            role: user.dataValues.role
+        }, config.secret, "60s");
+
+        const refreshToken = this.generateAccessToken({
+            sub: user.dataValues.id,
+            role: user.dataValues.role
+        }, config.refresh_secret, "7d");
+
+        return {
+            'msg': 'Success',
+            access: {token: accessToken, expiredIn: now.setTime(now.getTime() + 60 * 1000)},
+            refresh: {token: refreshToken, expiredIn: now.setTime(now.getTime() + (7 * 24 * 60 * 60 * 1000))}
+
+        };
+
+    }
+
+}
+
+;
