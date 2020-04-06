@@ -1,15 +1,27 @@
+const log4js = require("log4js");
+
+log4js.configure({
+    appenders: { cheese: { type: "file", filename: "error.log" } },
+    categories: { default: { appenders: ["cheese"], level: "error" } }
+});
+
+const log = log4js.getLogger("Customer");
+
 class CustomerNotFoundError extends Error {
-    constructor(message, status) {
+    constructor(req, res, message, status) {
         super();
 
         Error.captureStackTrace(this, this.constructor);
 
         this.name = this.constructor.name;
+        this.status = status || 400;
+        this.message = message || 'Something went wrong';
 
-        this.message = message ||
-            'Something went wrong. Please try again.';
+        log.error(message);
 
-        this.status = status || 500;
+        return res.status(this.status).json({ message });
+
+
     }
 }
 module.exports = {
