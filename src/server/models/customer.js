@@ -24,14 +24,30 @@ class CustomerModel extends Model{
   static getId(id) {
     return this.findOne({
       where: {id},
-      attributes: ["id"],
+      attributes: ["id","role","email"],
       order: [["createdAt", "DESC"]]
     });
   }
 
-  static deleteById(id) {
+  static findFullInfo({id}) {
+    return this.findOne({
+      where: {id},
+      attributes: ["id","role","email"],
+      order: [["createdAt", "DESC"]]
+    });
+  }
+
+  static findAllUser() {
+    return this.findAll();
+  }
+
+  static createUser(body) {
+    return this.create(body);
+  }
+
+  static deleteById({user_id}) {
     return this.destroy({
-        where: {id}
+        where: {id:user_id}
     });
   }
 
@@ -41,7 +57,7 @@ class CustomerModel extends Model{
     });
   }
 
-  static findByLogin(email,password) {
+  static findByLogin({email,password}) {
     return this.findOne({
         where: {
             [Op.and]: [
@@ -54,6 +70,8 @@ class CustomerModel extends Model{
       order: [["createdAt", "DESC"]]
     });
   }
+
+
 
   getFullName() {
     return `${this.firstname} ${this.lastname}`;

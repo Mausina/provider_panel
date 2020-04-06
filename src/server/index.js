@@ -7,6 +7,7 @@ let cookieParser = require("cookie-parser");
 let logger = require("morgan");
 let fs = require("fs");
 const errorHandler = require("./_helpers/error-handler");
+const customerErrorHandler = require("./_helpers/CustomerNotFoundError");
 const cors = require("cors");
 
 let routes = require("./routers");
@@ -52,5 +53,6 @@ app.use(function (req, res, next) {
 
 // error handler
 app.use(errorHandler);
+app.use(customerErrorHandler.CustomerNotFoundError);
 
 module.exports = app;
