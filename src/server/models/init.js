@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+
 let {config: {db, user_db, user_password, host, dialect}} = require("../config/serv.config");
 
 
