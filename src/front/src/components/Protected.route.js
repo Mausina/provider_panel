@@ -1,15 +1,13 @@
 import React from "react";
-import {Redirect, Route} from "react-router-dom";
-import auth from "../auth/auth";
-
+import { Route, Redirect } from "react-router-dom";
+import CutomerService from "../service/CustomerService";
 
 export const ProtectedRoute = ({component: Component,...rest}) => {
-    console.log(rest)
     return (
         <Route
             {...rest}
             render={props => {
-                if (auth.isAuthenticated()) {
+                if (CutomerService.isAuthenticated()) {
                     return <Component {...props} />;
                 } else {
                     return (
