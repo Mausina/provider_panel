@@ -1,161 +1,98 @@
 import React, {Component} from 'react';
-import clsx from 'clsx';
-import {makeStyles, useTheme} from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import CustomerService from "../../service/CustomerService";
 import '../css/main.css'
-const drawerWidth = 240;
+import {
+    MDBCollapse,
+    MDBDropdown,
+    MDBDropdownItem,
+    MDBDropdownMenu,
+    MDBDropdownToggle,
+    MDBIcon,
+    MDBNavbar,
+    MDBNavbarBrand,
+    MDBNavbarNav,
+    MDBNavbarToggler,
+    MDBNavItem,
+    MDBNavLink,
+    MDBCard, MDBCardTitle, MDBCardText, MDBContainer
+} from "mdbreact";
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-    },
-    appBar: {
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-    },
-    appBarShift: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
-        transition: theme.transitions.create(['margin', 'width'], {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
-    hide: {
-        display: 'none',
-    },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-    },
-    drawerPaper: {
-        width: drawerWidth,
-    },
-    drawerHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-end',
-    },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginLeft: -drawerWidth,
-    },
-    contentShift: {
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginLeft: 0,
-    },
-}));
-let user = JSON.parse(localStorage.getItem('userInfo'));
+import CustomerService from '../../service/CustomerService'
 
 
-export default class PersistentDrawerLeft extends Component{
+export default class PersistentDrawerLeft extends Component {
     state = {
-        active: false
+        isOpen: false,
+        user: JSON.parse(localStorage.getItem('userInfo')),
+        userInfo: null
     };
 
-    handleDrawerOpen = () => this.setState({ active: true });
-    handleDrawerClose = () => this.setState({ active: false });
 
-    render(){
+    toggleCollapse = () => {
+        this.setState({isOpen: !this.state.isOpen});
+    };
+
+
+    componentDidMount(): void {
+        CustomerService.getInfo(this.state.user.id).then(
+            user => this.setState({userInfo: user.data.user})
+        );
+    }
+
+
+    render() {
+        console.log(this.state);
         return (
-            <div className="root">
-                <CssBaseline />
-                <AppBar
-                    position="fixed"
-                >
-                    <Toolbar>
-                        <IconButton
-                            color="inherit"
-                            aria-label="open drawer"
-                            onClick={this.handleDrawerOpen}
-                            edge="start"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Typography variant="h6" noWrap>
-                            Persistent drawer
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <Drawer
-                    variant="persistent"
-                    anchor="left"
-                    open={this.state.active}
-                >
-                    <div>
-                        <IconButton onClick={this.handleDrawerClose}>
-                            <ChevronLeftIcon />
-                        </IconButton>
+            <div>
+                <MDBNavbar color="default-color" dark expand="md">
+                    <div className="container">
+                        <MDBNavbarBrand>
+                            <span
+                                className="white-text">Добрый день <strong>{this.state.userInfo ? this.state.userInfo.firstname : ''}</strong></span>
+                        </MDBNavbarBrand>
+                        <MDBNavbarToggler onClick={this.toggleCollapse}/>
+                        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+                            <MDBNavbarNav right>
+                                <ul className="navbar-nav mr-auto">
+                                    <li className="nav-item active">
+                                        <a className="nav-link" href="viber://chat?number=380503986114">
+                                            <MDBIcon fab icon="viber"/>
+                                        </a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="tg://resolve?domain=@ZooComplex"><MDBIcon fab
+                                                                                                                icon="telegram-plane"/></a>
+                                    </li>
+                                </ul>
+                                <MDBNavItem>
+                                    <MDBDropdown>
+                                        <MDBDropdownToggle nav caret>
+                                            <MDBIcon icon="user"/>
+                                        </MDBDropdownToggle>
+                                        <MDBDropdownMenu className="dropdown-default">
+                                            <MDBDropdownItem href="/">Exit</MDBDropdownItem>
+                                        </MDBDropdownMenu>
+                                    </MDBDropdown>
+                                </MDBNavItem>
+                            </MDBNavbarNav>
+                        </MDBCollapse>
                     </div>
-                    <Divider />
-                    <List>
-                        <ListItem button key={'send-mail'}>
-                            <ListItemIcon><InboxIcon/></ListItemIcon>
-                            <ListItemText primary={'Send-mail'}/>
-                        </ListItem>
-                    </List>
-                </Drawer>
-                <main>
+                </MDBNavbar>
 
-                    <div className='drawerHeader'/>
-
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-                        facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-                        gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-                        donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-                        adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-                        Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-                        imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-                        arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-                        donec massa sapien faucibus et molestie ac.
-                    </Typography>
-                    <Typography paragraph>
-                        Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-                        facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-                        tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-                        consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-                        vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-                        hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-                        tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-                        nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-                        accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-                    </Typography>
-                </main>
+                <MDBContainer>
+                    <MDBCard className="card-body" style={{ width: "22rem", marginTop: "1rem" }}>
+                        <MDBCardTitle>Panel Title</MDBCardTitle>
+                        <MDBCardText>
+                            Some quick example text to build on the panel title and make up the
+                            bulk of the panel's content.
+                        </MDBCardText>
+                        <div className="flex-row">
+                            <a href="#!">MDBCard link</a>
+                            <a href="#!" style={{ marginLeft: "1.25rem" }}>Another link</a>
+                        </div>
+                    </MDBCard>
+                </MDBContainer>
             </div>
         );
     }
 }
-// CustomerService.getInfo(user.id).then(user => console.log(user));
+

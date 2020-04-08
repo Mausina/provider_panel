@@ -1,8 +1,10 @@
-const { sequelize, Sequelize} = require("./init");
+let {config} = require("../config/serv.config");
 
 const { CustomerModel} = require("./customer");
 
+const init = require('./init');
 
+let {sequelize, Sequelize} =  init.initDb(config);
 
 const models = {
     Customer: CustomerModel.init(sequelize, Sequelize)

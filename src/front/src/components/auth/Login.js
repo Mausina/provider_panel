@@ -1,21 +1,18 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 import AuthService from '../../service/AuthService'
 import jwt from 'jwt-decode'
+import {MDBAlert, MDBBtn, MDBCol, MDBContainer, MDBInput, MDBRow} from 'mdbreact';
+
 
 class LoginComponent extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
+            email: '',
             password: '',
-            message: '',
+            msg: '',
+            show: false
         };
         this.login = this.login.bind(this);
     }
@@ -26,7 +23,8 @@ class LoginComponent extends React.Component {
 
     login = (e) => {
         e.preventDefault();
-        const credentials = {email: this.state.username, password: this.state.password};
+        const credentials = {email: this.state.email, password: this.state.password};
+        this.setState({msg:'', show: false});
         AuthService.login(credentials).then(res => {
             if (res.status === 200) {
                 let accessToken = JSON.stringify(res.data.access.token);
@@ -37,9 +35,10 @@ class LoginComponent extends React.Component {
                 localStorage.setItem("userInfo", JSON.stringify(user));
                 localStorage.setItem("userRefreshToken", refreshToken);
                 this.props.history.push('/main');
-            } else {
-                this.setState({message: res.data.message});
             }
+        }).catch(error => {
+            console.log(error.response);
+            this.setState({msg: error.response.data.msg, show: true});
         });
     };
 
@@ -49,45 +48,34 @@ class LoginComponent extends React.Component {
     render() {
 
         return (
-            <React.Fragment>
-                <AppBar position="static">
-                    <Toolbar>
-                        <Typography variant="h6">
-                            React User Application
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <Container maxWidth="sm">
-                    <Typography variant="h4" style={styles.center}>Login</Typography>
-                    <form>
-                        <Typography variant="h4" style={styles.notification}>{this.state.message}</Typography>
-                        <TextField type="text" label="USERNAME" fullWidth margin="normal" name="username"
-                                   value={this.state.username} onChange={this.onChange}/>
-
-                        <TextField type="password" label="PASSWORD" fullWidth margin="normal" name="password"
-                                   value={this.state.password} onChange={this.onChange}/>
-
-                        <Button variant="contained" color="secondary" onClick={this.login}>Login</Button>
-                    </form>
-                </Container>
-            </React.Fragment>
+            <MDBContainer>
+                <MDBRow>
+                    <MDBCol md="6">
+                        <form>
+                            <p className="h5 text-center mb-4">Sign in</p>
+                            {this.state.show ?<MDBAlert color="danger">
+                                {this.state.msg}
+                            </MDBAlert> : ''}
+                            <div className="grey-text">
+                                <MDBInput label="Type your email" name='email' value={this.state.username}
+                                          onChange={this.onChange} icon="envelope" group type="email" validate
+                                          error="wrong"
+                                          success="right"/>
+                                <MDBInput label="Type your password" name='password' value={this.state.password}
+                                          onChange={this.onChange} icon="lock" group type="password" validate/>
+                            </div>
+                            <div className="text-center">
+                                <MDBBtn onClick={this.login}>Login</MDBBtn>
+                            </div>
+                        </form>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
         )
 
     }
 
 }
 
-const styles = {
-    center: {
-        display: 'flex',
-        justifyContent: 'center'
-
-    },
-    notification: {
-        display: 'flex',
-        justifyContent: 'center',
-        color: '#dc3545'
-    }
-};
 
 export default LoginComponent;
