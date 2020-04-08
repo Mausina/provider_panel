@@ -15,7 +15,7 @@ class CustomerNotFoundError extends Error {
 
         this.name = this.constructor.name;
         this.status = status || 400;
-        this.message = message || 'Something went wrong';
+        this.msg = message || 'Something went wrong';
 
         log.error(message);
 

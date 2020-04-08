@@ -32,7 +32,7 @@ class CustomerModel extends Model{
   static findFullInfo({id}) {
     return this.findOne({
       where: {id},
-      attributes: ["id","role","email"],
+      attributes: ["id","role","email","firstname","lastname","telephone"],
       order: [["createdAt", "DESC"]]
     });
   }

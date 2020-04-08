@@ -37,7 +37,7 @@ let findOne = async (req, res) => {
             .then(user => user ? res.json({
                 'msg': 'Success',
                 user
-            }) : res.status(400).json({message: 'Username cant Find'}))
+            }) : res.status(401).json({msg: 'Username cant Find'}))
     }catch (e) {
         throw new CustomerNotFoundError(req, res, 'FindOne is Error')
     }
@@ -75,7 +75,7 @@ let delete_user = async (req, res) => {
 let authenticate = async (req, res) => {
     try{
         Customer.findByLogin(req.body)
-            .then(user => user ? res.status(200).json(fun.token_controller(user)) : res.status(400).json({message: 'User cant find check fields'}));
+            .then(user => user ? res.status(200).json(fun.token_controller(user)) : res.status(401).json({msg: 'User cant find check fields'}));
     }catch (e) {
         throw new CustomerNotFoundError(req, res, 'Authenticate is Error')
     }

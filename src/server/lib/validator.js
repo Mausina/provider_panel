@@ -35,7 +35,7 @@ function validate_add(req, res, next) {
                 // send a 422 error response if validation fails
                 res.status(422).json({
                     status: 'error',
-                    message: err.details[0].message,
+                    msg: err.details[0].message,
                     data: req.body
                 });
             } else {
@@ -55,7 +55,7 @@ function update_validate(req, res, next) {
                 // send a 422 error response if validation fails
                 res.status(422).json({
                     status: 'error',
-                    message: err.details[0].message,
+                    msg: err.details[0].message,
                     data: req.body
                 });
             } else {
@@ -71,7 +71,7 @@ function role_validate(req, res, next) {
     if(user.role === 'admin'){
         next()
     }else{
-        return res.status(401).json({message: 'Please be admin'});
+        return res.status(401).json({msg: 'Please be admin'});
     }
 }
 
@@ -85,6 +85,7 @@ function key_check(req, res, next = '') {
     if (typeof bearerHeader !== "undefined") {
         // Split at the space
         const bearer = bearerHeader.split(" ");
+        console.log(bearer);
         // Set the token
         req.token = bearer[1];
         let result = '';
@@ -93,7 +94,7 @@ function key_check(req, res, next = '') {
             if (err) {
                 return res.status(422).json({
                     status: 'error',
-                    message: 'Error in valid key authorized'
+                    msg: 'Error in valid key authorized'
                 });
             }
 
@@ -104,7 +105,7 @@ function key_check(req, res, next = '') {
 
         return result
     } else {
-        return res.status(401).json({message: 'Unauthorized'});
+        return res.status(401).json({msg: 'Unauthorized'});
     }
 }
 

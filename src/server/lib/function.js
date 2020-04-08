@@ -56,12 +56,12 @@ module.exports = {
 
         let now = new Date();
         const accessToken = this.generateAccessToken({
-            sub: user.dataValues.id,
+            id: user.dataValues.id,
             role: user.dataValues.role
         }, config.secret, "60s");
 
         const refreshToken = this.generateAccessToken({
-            sub: user.dataValues.id,
+            id: user.dataValues.id,
             role: user.dataValues.role
         }, config.refresh_secret, "7d");
 
