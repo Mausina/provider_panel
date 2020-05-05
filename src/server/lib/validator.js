@@ -65,6 +65,25 @@ function update_validate(req, res, next) {
         });
     }
 }
+function  callback_refresh_token(req, res){
+    let now = new Date();
+    let user = key_check(req, res);
+    const refreshToken = this.generateAccessToken({
+        id: user.dataValues.id,
+        role: user.dataValues.role
+    }, config.refresh_secret, "7d");
+
+    if(user) {
+        return res.status(200).json({
+            'msg': 'Success',
+            user,
+            refresh_token: refreshToken
+
+        });
+    }else{
+        return res.status(401).json({msg: 'User dont find'});
+    }
+}
 
 function role_validate(req, res, next) {
     let user = key_check(req, res);
@@ -77,6 +96,14 @@ function role_validate(req, res, next) {
 
 function auth_check(req, res, next) {
     key_check(req,res,next)
+}
+function callback_me(req, res) {
+    let user = key_check(req, res);
+    if(user) {
+        return res.status(200).json({msg: 'User  find',user});
+    }else{
+        return res.status(401).json({msg: 'User dont find'});
+    }
 }
 function key_check(req, res, next = '') {
 
@@ -111,6 +138,8 @@ function key_check(req, res, next = '') {
 
 module.exports = {
     validate_add,
+    callback_me,
+    callback_refresh_token,
     role_validate,
     auth_check,
     update_validate

@@ -31,3 +31,282 @@
 [2020-04-08T15:57:50.146] [ERROR] server - undefined
 [2020-04-08T15:59:28.715] [ERROR] Customer - Refresh token incorrect
 [2020-04-08T15:59:28.715] [ERROR] server - undefined
+[2020-05-04T09:46:15.744] [ERROR] Customer - Authenticate is Error
+[2020-05-04T11:59:51.480] [ERROR] server - Not Found
+[2020-05-04T12:00:53.173] [ERROR] server - Not Found
+[2020-05-04T12:00:56.928] [ERROR] server - Not Found
+[2020-05-04T12:00:58.730] [ERROR] server - Not Found
+[2020-05-04T12:24:57.450] [ERROR] server - Not Found
+[2020-05-04T12:25:05.528] [ERROR] server - Not Found
+[2020-05-04T12:25:06.216] [ERROR] server - Not Found
+[2020-05-04T12:25:07.712] [ERROR] server - Not Found
+[2020-05-04T12:25:27.407] [ERROR] server - Not Found
+[2020-05-04T16:48:43.091] [ERROR] server - Not Found
+[2020-05-04T16:48:43.666] [ERROR] server - Not Found
+[2020-05-04T16:48:45.506] [ERROR] server - Not Found
+[2020-05-04T16:55:39.445] [ERROR] Customer - FindOne is Error
+[2020-05-04T16:56:08.419] [ERROR] server - Not Found
+[2020-05-04T16:57:37.906] [ERROR] server - Not Found
+[2020-05-04T16:57:49.564] [ERROR] server - Not Found
+[2020-05-04T16:58:57.089] [ERROR] server - Not Found
+[2020-05-04T16:58:57.140] [ERROR] server - Not Found
+[2020-05-04T16:58:58.756] [ERROR] server - Not Found
+[2020-05-04T16:59:31.290] [ERROR] server - Not Found
+[2020-05-04T17:00:47.358] [ERROR] server - Not Found
+[2020-05-04T17:00:54.730] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:00:56.411] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:01:08.398] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:01:17.338] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:02:30.679] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:02:32.290] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:02:42.504] [ERROR] Customer - FindOne is Error
+[2020-05-04T17:03:51.751] [ERROR] server - Not Found
+[2020-05-04T17:03:53.573] [ERROR] server - Not Found
+[2020-05-04T17:05:14.305] [ERROR] server - Not Found
+[2020-05-04T17:05:16.280] [ERROR] server - Not Found
+[2020-05-04T17:05:27.365] [ERROR] server - Not Found
+[2020-05-04T17:07:03.993] [ERROR] server - Not Found
+[2020-05-04T17:07:06.055] [ERROR] server - Not Found
+[2020-05-04T17:09:42.985] [ERROR] server - Not Found
+[2020-05-04T17:09:44.566] [ERROR] server - Not Found
+[2020-05-04T17:12:31.434] [ERROR] server - Not Found
+[2020-05-04T17:12:33.325] [ERROR] server - Not Found
+[2020-05-04T17:12:58.104] [ERROR] server - Not Found
+[2020-05-04T17:12:59.695] [ERROR] server - Not Found
+[2020-05-04T17:13:34.757] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:13:36.396] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:13:51.350] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:16:29.795] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:16:31.470] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:21:13.396] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:21:15.099] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:21:39.205] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:21:41.148] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:27:45.820] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:27:47.471] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:39:18.544] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:39:20.256] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:39:44.485] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:39:46.200] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:41:49.331] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:41:49.389] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:41:50.997] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:42:28.281] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:43:02.976] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:43:16.431] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:49:18.643] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:49:18.720] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:49:20.237] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:49:35.615] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:49:35.658] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:49:37.314] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:53:30.838] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:53:30.930] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:53:32.712] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:55:54.209] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:55:54.259] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:55:55.948] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:56:47.271] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:56:47.375] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:56:49.214] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:57:26.347] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:57:26.393] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:57:28.300] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:57:35.693] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:57:35.748] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:57:37.425] [ERROR] Customer - Authenticate is Error
+[2020-05-04T17:59:35.239] [ERROR] server - Not Found
+[2020-05-04T17:59:35.280] [ERROR] server - Not Found
+[2020-05-04T17:59:36.337] [ERROR] server - Not Found
+[2020-05-04T17:59:45.438] [ERROR] server - Not Found
+[2020-05-04T17:59:45.573] [ERROR] server - Not Found
+[2020-05-04T17:59:47.315] [ERROR] server - Not Found
+[2020-05-04T18:00:11.595] [ERROR] server - Not Found
+[2020-05-04T18:00:22.229] [ERROR] server - Not Found
+[2020-05-04T18:27:15.992] [ERROR] server - Not Found
+[2020-05-04T18:27:16.063] [ERROR] server - Not Found
+[2020-05-04T18:27:17.279] [ERROR] server - Not Found
+[2020-05-04T18:28:03.748] [ERROR] server - Not Found
+[2020-05-04T18:30:16.566] [ERROR] server - Not Found
+[2020-05-04T18:31:02.680] [ERROR] server - Not Found
+[2020-05-04T18:31:04.488] [ERROR] server - Not Found
+[2020-05-04T18:31:12.904] [ERROR] server - Not Found
+[2020-05-04T18:31:42.841] [ERROR] server - Not Found
+[2020-05-04T18:31:44.631] [ERROR] server - Not Found
+[2020-05-04T18:31:49.470] [ERROR] server - Not Found
+[2020-05-04T18:32:42.629] [ERROR] server - Not Found
+[2020-05-04T18:32:42.680] [ERROR] server - Not Found
+[2020-05-04T18:32:44.408] [ERROR] server - Not Found
+[2020-05-04T18:34:57.649] [ERROR] server - Not Found
+[2020-05-04T18:34:59.485] [ERROR] server - Not Found
+[2020-05-05T14:03:07.306] [ERROR] server - Not Found
+[2020-05-05T14:24:38.717] [ERROR] server - Not Found
+[2020-05-05T14:24:40.569] [ERROR] server - Not Found
+[2020-05-05T14:24:50.184] [ERROR] Customer - Authenticate is Error
+[2020-05-05T14:25:53.062] [ERROR] Customer - Authenticate is Error
+[2020-05-05T14:28:31.362] [ERROR] Customer - Authenticate is Error
+[2020-05-05T14:29:54.277] [ERROR] Customer - Authenticate is Error
+[2020-05-05T14:30:37.153] [ERROR] server - Not Found
+[2020-05-05T14:30:37.236] [ERROR] server - Not Found
+[2020-05-05T14:30:38.915] [ERROR] server - Not Found
+[2020-05-05T14:31:08.144] [ERROR] server - Not Found
+[2020-05-05T14:31:08.216] [ERROR] server - Not Found
+[2020-05-05T14:31:09.760] [ERROR] server - Not Found
+[2020-05-05T14:38:56.142] [ERROR] server - Not Found
+[2020-05-05T14:38:56.242] [ERROR] server - Not Found
+[2020-05-05T14:38:57.711] [ERROR] server - Not Found
+[2020-05-05T14:39:48.154] [ERROR] server - Not Found
+[2020-05-05T14:39:49.814] [ERROR] server - Not Found
+[2020-05-05T14:42:39.586] [ERROR] server - Not Found
+[2020-05-05T14:42:41.138] [ERROR] server - Not Found
+[2020-05-05T14:43:40.786] [ERROR] server - Not Found
+[2020-05-05T14:43:40.827] [ERROR] server - Not Found
+[2020-05-05T14:43:42.190] [ERROR] server - Not Found
+[2020-05-05T14:44:33.744] [ERROR] server - Not Found
+[2020-05-05T14:44:33.791] [ERROR] server - Not Found
+[2020-05-05T14:44:35.309] [ERROR] server - Not Found
+[2020-05-05T14:45:36.891] [ERROR] server - Not Found
+[2020-05-05T14:45:36.936] [ERROR] server - Not Found
+[2020-05-05T14:45:38.614] [ERROR] server - Not Found
+[2020-05-05T14:47:29.075] [ERROR] server - Not Found
+[2020-05-05T14:47:29.123] [ERROR] server - Not Found
+[2020-05-05T14:47:30.907] [ERROR] server - Not Found
+[2020-05-05T14:50:12.856] [ERROR] server - Not Found
+[2020-05-05T14:50:12.903] [ERROR] server - Not Found
+[2020-05-05T14:50:14.589] [ERROR] server - Not Found
+[2020-05-05T15:06:42.075] [ERROR] server - Not Found
+[2020-05-05T15:06:42.121] [ERROR] server - Not Found
+[2020-05-05T15:06:43.845] [ERROR] server - Not Found
+[2020-05-05T15:06:52.102] [ERROR] server - Not Found
+[2020-05-05T15:07:41.870] [ERROR] server - Not Found
+[2020-05-05T15:07:43.526] [ERROR] server - Not Found
+[2020-05-05T15:07:57.343] [ERROR] server - Not Found
+[2020-05-05T15:07:57.446] [ERROR] server - Not Found
+[2020-05-05T15:07:59.094] [ERROR] server - Not Found
+[2020-05-05T15:09:13.336] [ERROR] server - Not Found
+[2020-05-05T15:09:15.082] [ERROR] server - Not Found
+[2020-05-05T15:14:01.989] [ERROR] server - Not Found
+[2020-05-05T15:14:03.720] [ERROR] server - Not Found
+[2020-05-05T15:16:41.282] [ERROR] server - Not Found
+[2020-05-05T15:16:43.021] [ERROR] server - Not Found
+[2020-05-05T15:22:08.069] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:22:09.764] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:22:50.604] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:22:52.316] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:22:57.640] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:22:59.292] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:23:22.006] [ERROR] Customer - FindOne is Error
+[2020-05-05T15:23:23.639] [ERROR] Customer - FindOne is Error
+[2020-05-05T15:25:15.384] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:25:17.101] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:27:45.311] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:27:47.143] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:30:42.363] [ERROR] Customer - FindOne is Error
+[2020-05-05T15:30:44.130] [ERROR] Customer - FindOne is Error
+[2020-05-05T15:32:02.719] [ERROR] Customer - FindOne is Error
+[2020-05-05T15:33:38.976] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:34:17.308] [ERROR] Customer - Refresh token incorrect
+[2020-05-05T15:34:17.308] [ERROR] server - undefined
+[2020-05-05T15:34:39.663] [ERROR] Customer - FindOne is Error
+[2020-05-05T15:38:34.935] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:42:14.229] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:42:16.107] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:42:21.175] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:42:22.861] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:57:12.422] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:57:14.205] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:58:18.065] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:58:20.224] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:58:25.076] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:58:26.732] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:58:31.050] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T15:58:32.789] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:00:47.387] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:00:49.222] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:02:13.437] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:02:15.169] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:03:57.211] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:05:29.372] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:05:31.114] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:05:44.966] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:06:21.835] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:06:23.474] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:06:50.234] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:07:43.729] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:07:45.415] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:10:24.941] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:10:26.694] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:10:33.586] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:10:35.254] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:11:52.276] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:11:53.900] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:13:58.368] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:14:00.074] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:15:03.344] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:15:05.046] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:15:53.596] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:15:55.405] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:16:35.358] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:16:37.032] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:17:28.368] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:17:30.575] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:25:16.401] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:25:18.071] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:25:21.798] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:25:23.425] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:27:34.357] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:27:36.556] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:28:35.629] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:28:37.375] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:28:43.903] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:28:45.494] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:29:37.276] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:30:42.592] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:30:44.412] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:31:07.376] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:31:08.993] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:31:26.431] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:34:57.846] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:34:59.528] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:35:58.435] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:39:07.241] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:39:15.482] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:39:24.429] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:39:27.147] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:40:59.313] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:41:14.022] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:43:12.430] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:43:14.087] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:43:34.666] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:44:34.910] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:44:36.652] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:44:44.043] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:47:28.877] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:47:30.557] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:47:46.427] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:48:20.610] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:48:31.980] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:48:38.551] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:48:40.382] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:49:02.858] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:49:13.066] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:49:14.776] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:49:27.833] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:53:30.285] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:53:32.031] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:53:43.631] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:54:07.667] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:54:09.468] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:54:19.265] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:55:43.662] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:55:45.656] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:57:39.037] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:57:40.882] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T16:57:59.387] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:06:44.585] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:06:46.281] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:06:52.044] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:06:53.657] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:07:20.799] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:16:51.602] [ERROR] server - Cannot set headers after they are sent to the client
+[2020-05-05T17:16:53.517] [ERROR] server - Cannot set headers after they are sent to the client

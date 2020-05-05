@@ -58,7 +58,7 @@ module.exports = {
         const accessToken = this.generateAccessToken({
             id: user.dataValues.id,
             role: user.dataValues.role
-        }, config.secret, "60s");
+        }, config.secret, "1800s");
 
         const refreshToken = this.generateAccessToken({
             id: user.dataValues.id,
@@ -67,11 +67,10 @@ module.exports = {
 
         return {
             'msg': 'Success',
-            access: {token: accessToken, expiredIn: now.setTime(now.getTime() + 60 * 1000)},
-            refresh: {token: refreshToken, expiredIn: now.setTime(now.getTime() + (7 * 24 * 60 * 60 * 1000))}
-
+            user,
+            access_token: accessToken,
+            refresh_token: refreshToken,
         };
-
     }
 
 }
