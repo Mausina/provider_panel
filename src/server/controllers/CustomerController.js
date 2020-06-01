@@ -39,7 +39,6 @@ let findAll = async (req, res) => {
 let findOne = async (req, res) => {
     try {
         let find_user = await Customer.findFullInfo(req.params);
-        console.log();
         if (find_user) {
             res.json({'msg': 'Success', user: find_user})
         } else {

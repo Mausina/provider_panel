@@ -1,6 +1,7 @@
 let jwt = require("jsonwebtoken");
 const Joi = require('joi');
 const {config} = require('../config/serv.config');
+const {Customer} = require('../models/db');
 
 const shema_add = Joi.object().keys({
     firstname: Joi.string().alphanum().min(3).max(30).required(),
@@ -97,14 +98,27 @@ function role_validate(req, res, next) {
 function auth_check(req, res, next) {
     key_check(req,res,next)
 }
-function callback_me(req, res) {
+
+let callback_me = async (req, res) => {
     let user = key_check(req, res);
+    let result = await Customer.findFullInfo(user);
+    let user_info = {
+        id: result.dataValues.id,
+        role: result.dataValues.role,
+        email: result.dataValues.email,
+        firstname: result.dataValues.firstname,
+        prefix: result.dataValues.prefix,
+        lastname: result.dataValues.lastname,
+        telephone: result.dataValues.telephone,
+    }
     if(user) {
-        return res.status(200).json({msg: 'User  find',user});
+        console.log(user_info);
+        return res.status(200).json({msg: 'User  find',user:user_info});
     }else{
         return res.status(401).json({msg: 'User dont find'});
     }
 }
+
 function key_check(req, res, next = '') {
 
     const bearerHeader = req.headers["authorization"];
